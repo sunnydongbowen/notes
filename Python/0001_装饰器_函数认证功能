@@ -1,0 +1,43 @@
+```python
+#-*-coding:utf-8-*-
+import os
+import time
+from functools import wraps
+'''
+1、编写装饰器，为多个函数加上认证的功能(用户的账号和密码来源于文件)
+2、要求登录一次，后续函数都无需输入用户名和密码
+'''
+FLAG = False
+def login(func):
+    def inner(*args,**kwargs):
+        global FLAG
+        '''  登录程序 '''
+        if FLAG:
+            ret = func(*args, **kwargs)
+            return ret
+        else:
+            username = input("username :" )
+            password = input('password :' )
+            if username == 'bowen' and password == '22222':
+                FLAG = True
+                ret = func(*args,**kwargs)
+                return ret
+            else:
+                print('登录失败')
+    return inner
+@login
+def shoplist_add():
+    print("添加一个物品")
+@login
+def shoplist_del():
+    print("删除一个物品")
+shoplist_add()
+shoplist_del()
+```
+
+
+
+
+
+
+
