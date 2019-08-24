@@ -1,6 +1,6 @@
 
 
-#  Ubunt开机时进入gun grup 解决方法
+#  Ubuntu开机时进入gun grup 解决方法
 
 ```shell
 sudo vi /etc/default/grub 
