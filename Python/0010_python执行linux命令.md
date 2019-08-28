@@ -34,7 +34,7 @@ os.system("virsh dumpxml LoginVsi13 | grep port | grep spice")
 
 ```python
 import  os;
-#import commands; 这个是python2 里面的。现在
+#import commands; 这个是python2 里面的。现在commands是python2版本里的，在python3.0以上已经没有commands模块了，使用subprocess代替commands
 import subprocess;
 import  paramiko;
 import  logging;
@@ -83,7 +83,9 @@ for i in  range(21):
 
 ![1566916973620](1566916973620.png)
 
-​      
+​     [参考链接1](https://www.cnblogs.com/hujq1029/p/7096247.html)
+
+
 
 ​      
 
