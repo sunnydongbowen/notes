@@ -46,13 +46,15 @@ def ssh(ip,username,passwd,cmd):
     stdin,stdout,stderr = client.exec_command(cmd)
     #print(stdout.read().decode('utf-8'))
     client.close()
-
+'''
+  OS system 用法
+'''
 #os.system("echo \"hello word\" ")
-
 #val = os.system(" lsof -i:5672 ")
-
 #os.system("virsh list --all | grep Lo ")
-
+'''
+  测试代码
+'''
 # i = 2
 # str = " virsh dumpxml LoginVsi" + str(i) + "| grep port | grep spice"
 #
@@ -70,9 +72,7 @@ for i in  range(21):
     spiceport = port[2][1:5]
     cmd_connect = "nohup spicy-stats -h 192.168.40.50 -p " + spiceport + ' -w Admin@ocloud123&'
     print(cmd_connect)
-    #ssh('192.168.40.233', 'root', '123', cmd_connect)
-#print(var)
-#print(type(var))
+    ssh('192.168.40.233', 'root', '123', cmd_connect)
 ```
 
 执行结果：
@@ -85,11 +85,43 @@ for i in  range(21):
 
 ​     [参考链接1](https://www.cnblogs.com/hujq1029/p/7096247.html)
 
-　 这个程序其实还有优化的地方，比如如何kill掉这60个连接？不能发送完了起来了就不管了。或者直接把虚拟机关掉，连接也会断掉。或在另一台客户端开启连接，也会断掉。但是会在另外一台罢了。程序虽然很短，但是实现的功能却是很强大的。减少了很多手动的机械操作，这就是python的强大之处。python在自动化测试，人工智能，数据处理分析这上面的优势，是任何一门语言无法相比的。所以好好学吧。深入进去，这是一门技术。也是门艺术。python
+　 这个程序其实还有优化的地方，比如如何kill掉这60个连接？不能发送完了起来了就不管了。或者直接把虚拟机关掉，连接也会断掉。或在另一台客户端开启连接，也会断掉。但是会在另外一台罢了。程序虽然很短，但是实现的功能却是很强大的。减少了很多手动的机械操作，这就是python的强大之处。python在自动化测试，人工智能，数据处理分析这上面的优势，是任何一门语言无法相比的。所以好好学吧。深入进去，这是一门技术。也是门艺术。
+
+​    测试发现，在跑LoginVSI 的同时，一个客户端的内存并不能承受那么多的链接数，可以将其分担到虚拟机中，进行测试。
+
+​    比较干净的代码如下:
+
+```python
+import  os;
+import subprocess;
+import  paramiko;
+import  logging;
+
+def ssh(ip,username,passwd,cmd):
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(hostname=ip,port=22,username=username,password=passwd)
+    stdin,stdout,stderr = client.exec_command(cmd)
+    #print(stdout.read().decode('utf-8'))
+    client.close()
+
+for i in  range(49):
+    command =" virsh dumpxml LoginVsi"+str(i) + "| grep port | grep spice"
+    var  = subprocess.getoutput(command)
+    port = var.split("=")
+    #print(port[2])
+    print("LoginVsi"+str(i),"spice port :",port[2][1:5])
+    spiceport = port[2][1:5]
+    cmd_connect = "nohup /usr/local/bin/libspicy/spicy-stats -h 192.168.40.50 -p " + spiceport + ' -w Admin@ocloud123&'
+    #print(cmd_connect)
+    ssh('192.168.40.83', 'root', '123', cmd_connect)
+```
 
 ​       [一个不错的python学习网站](http://py3study.com/Article/part/type_id/1.html)
 
-​    
+​      [runoob.com](https://www.runoob.com/python/python-func-range.html)
+
+
 
 
 
