@@ -1,6 +1,6 @@
 #  root用户自登陆
 
-​      ubuntu 系统 默认是不允许root用户登陆的
+​      ubuntu 系统 默认是不允许root用户登陆的,这个文档仅供参考。具体的根据实际来。不同的Ubuntu版本是不一样的。debian版本更是不一样。
 
 1. ​    修改lightdm.conf 配置文件
 
