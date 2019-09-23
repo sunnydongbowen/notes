@@ -12,7 +12,7 @@
 vi /etc/network/interfaces
 ```
 
-​         
+​          
 
 
 
