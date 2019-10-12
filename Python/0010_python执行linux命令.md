@@ -89,7 +89,7 @@ for i in  range(21):
 
 ​        现在jdk 很多都过期了。单纯这一点，就没有python好。
 
-​    测试发现，在跑LoginVSI 的同时，一个客户端的内存并不能承受那么多的链接数，可以将其分担到虚拟机中，进行测试。
+​        测试发现，在跑LoginVSI 的同时，一个客户端的内存并不能承受那么多的链接数，可以将其分担到虚拟机中，进行测试。
 
 ​    比较干净的代码如下:
 
@@ -119,13 +119,13 @@ for i in  range(49):
     ssh('192.168.40.83', 'root', '123', cmd_connect)
 ```
 
-​       [一个不错的python学习网站](http://py3study.com/Article/part/type_id/1.html)
+​       把python研究透透的再说吧。我没那么多精力和时间，选python，深入研究下去。
 
-​      [runoob.com](https://www.runoob.com/python/python-func-range.html)
+​       
 
-​     [某人的博客园博客](https://www.hongweipeng.com/index.php/series.html)    参考一下思想，写的不错。java的那部分别看了。把python研究透透的再说吧。我没那么多精力和时间，选python，深入研究下去。
+​    
 
-
+  
 
 
 

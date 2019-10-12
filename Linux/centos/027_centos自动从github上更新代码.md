@@ -1,5 +1,3 @@
-​     为了测试更新代码方便，在测试服务器上配置，使用git pull  从公司的gitlab上获取最新的代码（以前是这么搞的，现在统一用版本包安装、更新）
-
 ​          1、登陆github
 
 ​          2、进入右上角个人信息，点击setting          ![1569750917697](1569750917697.png)
@@ -32,3 +30,6 @@ cat /root/.ssh/id_rsa.pub
  git clone ssh://git@gitlab.ocloudware.com:2289/development/ocloudagent.git
 ```
 
+​             为了测试更新代码方便，在测试服务器上配置，使用git pull  从公司的gitlab上获取最新的代码（以前是这么搞的，现在统一用版本包安装、更新） 这种方式其实适合自己调试用，或者是自己写好代码放在github上，然后拉取到需要运行的服务器上。方便调试。
+
+​            
