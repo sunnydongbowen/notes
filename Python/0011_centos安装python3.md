@@ -1,4 +1,4 @@
-​        下面是centos 安装python3.7 版本的步骤
+        下面是centos 安装python3.7 版本的步骤
 
 ​         很多时候需要在linux下安装python3.x版本，linux系统自带了python2.7版本，但不满足要求。就需要在上面安装python3版本的。安装完成后，在上面执行脚本即可。并不必要说都要用pycharm 去连上去。这样pycharm 设置的项目就很多。会乱。用一台常用的，然后其他服务器直接把脚本上传上去。缺少什么包自己pip下载即可。【但是试了一下，还是直接用Pycharm 远程调试 比较方便一些】
 
@@ -17,7 +17,7 @@
   ```shell
   cd #回到用户目录
   wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
-  tar -xvJf  Python-3.7.0.tar.xz
+  tar -xvJf  Python-3.7.0.tar.xz  # 要把j去掉
   ```
 
 +  编译安装
