@@ -1,5 +1,5 @@
 ```shell
-  find / -name getcpu.py
+  find / -name getcpu.py  #  一般记住这个就可以了。后面要记住的可能就是查看较大文件的那个命令。
 ```
 
 find 命令 还是很有用的，记不住文件路径就用它，想找到较大的文件，也用它。
