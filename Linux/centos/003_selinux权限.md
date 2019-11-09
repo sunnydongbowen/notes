@@ -1,7 +1,5 @@
 [TOC]
 
-
-
 ### 1   查看selinux权限
 
 ```shell
